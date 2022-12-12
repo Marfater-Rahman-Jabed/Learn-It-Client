@@ -14,6 +14,10 @@ body {
     background: #dde1e7;
 }
 
+.noDecoration {
+    text-decoration: none;
+}
+
 .img {
     height: 470px;
     width: 500px;
@@ -22,7 +26,7 @@ body {
 .jabed {
     display: flex;
     place-items: center;
-    margin-top: 15px;
+    margin-top: 50px;
     justify-content: center;
     align-items: center;
 }

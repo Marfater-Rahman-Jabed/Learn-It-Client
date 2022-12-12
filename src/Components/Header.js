@@ -20,7 +20,7 @@ const Header = () => {
                             height={'50px'}
                             className='me-2'
                         ></Image>
-                        <Navbar.Brand href="#home" className='text-warning'>Learn IT World</Navbar.Brand>
+                        <Navbar.Brand href="#home" ><Link to='/' className='text-warning noDecoration'>Learn IT World</Link></Navbar.Brand>
                     </div>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
