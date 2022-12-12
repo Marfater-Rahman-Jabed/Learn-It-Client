@@ -23,24 +23,34 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="#features">Features</Nav.Link>
-                            <Nav.Link href="#pricing">Pricing</Nav.Link>
-                            <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-                                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                            <Nav.Link href="#features" className='me-3'>Blog</Nav.Link>
+                            <Nav.Link href="#pricing" className='me-3'>FAQ</Nav.Link>
+                            <NavDropdown title="Courses" id="collasible-nav-dropdown" className='me-3'>
+                                <NavDropdown.Item href="#action/3.1">Data Science</NavDropdown.Item>
                                 <NavDropdown.Item href="#action/3.2">
-                                    Another action
+                                    Artificial Intelligence and Machine Learning
                                 </NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                                <NavDropdown.Divider />
+                                <NavDropdown.Item href="#action/3.3">Cloud Computing</NavDropdown.Item>
+                                <NavDropdown.Item />
                                 <NavDropdown.Item href="#action/3.4">
-                                    Separated link
+                                    Networking
+                                </NavDropdown.Item>
+                                <NavDropdown.Item href="#action/3.5">
+                                    Software Development.
+                                </NavDropdown.Item>
+                                <NavDropdown.Item href="#action/3.5">
+                                    Big Data
                                 </NavDropdown.Item>
                             </NavDropdown>
+                            <Nav.Link href="#pricing" className='me-3'>Toggle</Nav.Link>
                         </Nav>
                         <Nav>
-                            <Nav.Link href="#deets">More deets</Nav.Link>
-                            <Nav.Link eventKey={2} href="#memes">
-                                Dank memes
+                            <Nav.Link href="#deets">LogIn</Nav.Link>
+                            <Nav.Link href="#memes">
+                                Register
+                            </Nav.Link>
+                            <Nav.Link href="">
+                                LogOut
                             </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
