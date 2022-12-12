@@ -5,6 +5,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Image from 'react-bootstrap/Image'
 import logo from '../Assets/Images/Logo.png'
+import { Link } from 'react-router-dom';
+import '../style/Header.css'
 
 const Header = () => {
     return (
@@ -23,9 +25,9 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="#features" className='me-3'>Blog</Nav.Link>
-                            <Nav.Link href="#pricing" className='me-3'>FAQ</Nav.Link>
-                            <NavDropdown title="Courses" id="collasible-nav-dropdown" className='me-3'>
+                            <Nav.Link href="#features" className='me-3 text-color'>Blog</Nav.Link>
+                            <Nav.Link href="#pricing" className='me-3 text-color'>FAQ</Nav.Link>
+                            <span className='text-color'><NavDropdown title="Courses" id="collasible-nav-dropdown" className='me-3 text-color'>
                                 <NavDropdown.Item href="#action/3.1">Data Science</NavDropdown.Item>
                                 <NavDropdown.Item href="#action/3.2">
                                     Artificial Intelligence and Machine Learning
@@ -41,16 +43,16 @@ const Header = () => {
                                 <NavDropdown.Item href="#action/3.5">
                                     Big Data
                                 </NavDropdown.Item>
-                            </NavDropdown>
-                            <Nav.Link href="#pricing" className='me-3'>Toggle</Nav.Link>
+                            </NavDropdown></span>
+                            <Nav.Link href="#pricing" className='me-3 text-color'>Toggle</Nav.Link>
                         </Nav>
                         <Nav>
-                            <Nav.Link href="#deets">LogIn</Nav.Link>
-                            <Nav.Link href="#memes">
-                                Register
+                            <Nav.Link><Link to='/register' className='noDecoration text-color'>Register</Link></Nav.Link>
+                            <Nav.Link >
+                                <Link to='/login' className='noDecoration text-color'>LogIn</Link>
                             </Nav.Link>
-                            <Nav.Link href="">
-                                LogOut
+                            <Nav.Link>
+                                <Link className='noDecoration text-color'>LogOut</Link>
                             </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
