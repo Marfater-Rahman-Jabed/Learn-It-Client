@@ -2,7 +2,6 @@ import React from 'react';
 import '../style/LogIn.css';
 import logo from '../Assets/Images/Logo.png'
 import { FaLock, FaRegUser } from "react-icons/fa";
-import { Button } from 'react-bootstrap';
 import Image from 'react-bootstrap/Image'
 import logInLogo from '../Assets/Images/loginPageImage.webp';
 
@@ -20,7 +19,12 @@ const LogIn = () => {
 
                 <div>
                     {/* <!--Image & Title--> */}
-                    <div className='loginImg'><img src={logo}></img></div>
+                    {/* <div className='loginImg'><img src={logo}></img></div> */}
+                    <span className='loginImg'><Image
+                        src={logo}
+                    >
+
+                    </Image></span>
                     <div class="text">Please LogIn</div>
                     <form action="#">
                         {/* <!--Email & password input place--> */}
