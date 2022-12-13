@@ -19,20 +19,34 @@ body {
 }
 
 .img {
-    height: 470px;
+    height: 400px;
     width: 500px;
+    border-radius: 15px;
+}
+
+.img2 {
+    height: 560px;
+    width: 500px;
+    border-radius: 15px;
+}
+
+.bgcolor {
+    background-color: blueviolet;
+    height: 100vh;
 }
 
 .jabed {
     display: flex;
     place-items: center;
-    margin-top: 50px;
+    padding-top: 70px;
     justify-content: center;
     align-items: center;
+
 }
 
 .loginImg {
     padding-left: 95px;
+    /* border-radius: 50px; */
 }
 
 .content {

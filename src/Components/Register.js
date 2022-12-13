@@ -67,12 +67,12 @@ const Register = () => {
 
 
     return (
-        <div>
+        <div className='bgcolor'>
             {/* <h1>This is registration page</h1> */}
             <div className='jabed'>
 
                 <div>
-                    <Image className='img'
+                    <Image className='img2'
                         src={registrationImage}
                     ></Image>
                 </div>

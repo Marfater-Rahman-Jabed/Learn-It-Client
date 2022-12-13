@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import '../style/LogIn.css';
 import logo from '../Assets/Images/Logo.png'
-import { FaLock, FaRegUser } from "react-icons/fa";
+import { FaLock } from "react-icons/fa";
 import Image from 'react-bootstrap/Image'
 import logInLogo from '../Assets/Images/loginPageImage.webp';
 import { AiFillMail } from "react-icons/ai";
@@ -43,40 +43,42 @@ const LogIn = () => {
 
     return (
 
-        <div className='jabed'>
-
-            <div>
-                <Image className='img'
-                    src={logInLogo}
-                ></Image>
-            </div>
-            <div className="content">
+        <div className='bgcolor'>
+            <div className='jabed'>
 
                 <div>
-                    {/* <!--Image & Title--> */}
-                    {/* <div className='loginImg'><img src={logo}></img></div> */}
-                    <span className='loginImg'><Image
-                        src={logo}
-                    >
+                    <Image className='img'
+                        src={logInLogo}
+                    ></Image>
+                </div>
+                <div className="content">
 
-                    </Image></span>
-                    <div className="text">Please LogIn  </div>
-                    <Form onSubmit={handleLogin} >
-                        {/* <!--Email & password input place--> */}
-                        <div className="field">
-                            <span className='ps-3'><AiFillMail></AiFillMail></span>
-                            <input type="email" name='email' placeholder='Email Id' required />
+                    <div>
+                        {/* <!--Image & Title--> */}
+                        {/* <div className='loginImg'><img src={logo}></img></div> */}
+                        <span className='loginImg'><Image
+                            src={logo}
+                        >
 
-                        </div>
-                        <div className="field">
-                            <span className='ps-3'><FaLock></FaLock></span>
-                            <input type="password" name="password" id="" placeholder='Password' />
-                        </div>
-                        <span >New In This website? <Link to='/register' className='noDecoration'>Register</Link> </span>
-                        <button className='button'>Log in</button>
+                        </Image></span>
+                        <div className="text">Please LogIn  </div>
+                        <Form onSubmit={handleLogin} >
+                            {/* <!--Email & password input place--> */}
+                            <div className="field">
+                                <span className='ps-3'><AiFillMail></AiFillMail></span>
+                                <input type="email" name='email' placeholder='Email Id' required />
 
-                        {/* <!--login & outer button--> */}
-                    </Form>
+                            </div>
+                            <div className="field">
+                                <span className='ps-3'><FaLock></FaLock></span>
+                                <input type="password" name="password" id="" placeholder='Password' />
+                            </div>
+                            <span >New In This website? <Link to='/register' className='noDecoration'>Register</Link> </span>
+                            <button className='button'>Log in</button>
+
+                            {/* <!--login & outer button--> */}
+                        </Form>
+                    </div>
                 </div>
             </div>
         </div>
