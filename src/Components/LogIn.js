@@ -5,9 +5,20 @@ import { FaLock, FaRegUser } from "react-icons/fa";
 import Image from 'react-bootstrap/Image'
 import logInLogo from '../Assets/Images/loginPageImage.webp';
 import { AiFillMail } from "react-icons/ai";
+import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
 
 const LogIn = () => {
+    const handleLogin = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password);
+
+    }
+
+
     return (
 
         <div className='jabed'>
@@ -17,7 +28,7 @@ const LogIn = () => {
                     src={logInLogo}
                 ></Image>
             </div>
-            <div class="content">
+            <div className="content">
 
                 <div>
                     {/* <!--Image & Title--> */}
@@ -27,23 +38,23 @@ const LogIn = () => {
                     >
 
                     </Image></span>
-                    <div class="text">Please LogIn</div>
-                    <form action="#">
+                    <div className="text">Please LogIn</div>
+                    <Form onSubmit={handleLogin} >
                         {/* <!--Email & password input place--> */}
-                        <div class="field">
+                        <div className="field">
                             <span className='ps-3'><AiFillMail></AiFillMail></span>
-                            <input type="email" placeholder='Email Id' required />
+                            <input type="email" name='email' placeholder='Email Id' required />
 
                         </div>
-                        <div class="field">
+                        <div className="field">
                             <span className='ps-3'><FaLock></FaLock></span>
-                            <input type="password" name="" id="" placeholder='Password' />
+                            <input type="password" name="password" id="" placeholder='Password' />
                         </div>
                         <span >New In This website? <Link to='/register' className='noDecoration'>Register</Link> </span>
                         <button className='button'>Log in</button>
 
                         {/* <!--login & outer button--> */}
-                    </form>
+                    </Form>
                 </div>
             </div>
         </div>
