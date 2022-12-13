@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import '../style/LogIn.css';
 import logo from '../Assets/Images/Logo.png'
 import { FaLock, FaPhotoVideo, FaRegUser } from "react-icons/fa";
@@ -6,17 +6,62 @@ import { AiFillMail } from "react-icons/ai";
 import Image from 'react-bootstrap/Image'
 import registrationImage from '../Assets/Images/register3.png';
 import Form from 'react-bootstrap/Form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../Contexts/ContextApi';
+import { toast } from 'react-hot-toast';
+
 
 const Register = () => {
+    const { Registered, updateUserProfile } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const [user, setUser] = useState();
+    const [checked, setChecked] = useState(false);
+
     const handleRegister = (event) => {
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
         const email = form.email.value;
-        const photoURL = form.photoURL.value;
+        const photo = form.photoURL.value;
         const password = form.password.value;
-        console.log(name, password, email, photoURL)
+        console.log(name, password, email, photo)
+
+        Registered(email, password)
+            .then(result => {
+                const user = result.user;
+                setUser(user);
+                form.reset();
+                navigate('/login');
+                console.log(user);
+                handleProfile(name, photo);
+                toast.success('Successfully register');
+            })
+            .catch(error => {
+                console.log(error);
+                toast.error(error.message)
+            })
+
+
+
+    }
+
+    const handleProfile = (name, photo) => {
+        const profile = {
+            displayName: name,
+            photoURL: photo,
+
+        }
+        updateUserProfile(profile)
+            .then(() => {
+
+            })
+            .catch(() => {
+
+            })
+    }
+
+    const handleCheck = (event) => {
+        setChecked(event.target.checked);
 
     }
 
@@ -63,8 +108,12 @@ const Register = () => {
                                 <span className='ps-3'><FaLock></FaLock></span>
                                 <input type="password" name="password" id="" placeholder='Password' />
                             </div>
+                            <Form.Group className="mb-3 ms-2" controlId="formBasicCheckbox">
+                                <Form.Check onClick={handleCheck} type="checkbox" label={<>(Must) Accept <Link to='/terms' className='noDecoration'> terms & conditions</Link> </>} />
+                            </Form.Group>
                             <span className='ms-2 '>Already have an account? <Link to='/login' className='noDecoration'>LogIn</Link></span>
-                            <button className='button mt-1'>Register</button>
+
+                            <button className='button mt-1' disabled={!checked}>Register</button>
 
                             {/* <!--login & outer button--> */}
                         </Form>

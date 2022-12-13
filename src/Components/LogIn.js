@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import '../style/LogIn.css';
 import logo from '../Assets/Images/Logo.png'
 import { FaLock, FaRegUser } from "react-icons/fa";
@@ -6,15 +6,37 @@ import Image from 'react-bootstrap/Image'
 import logInLogo from '../Assets/Images/loginPageImage.webp';
 import { AiFillMail } from "react-icons/ai";
 import Form from 'react-bootstrap/Form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../Contexts/ContextApi';
+import { toast } from 'react-hot-toast';
+
+
+
 
 const LogIn = () => {
+    const { Login } = useContext(AuthContext);
+    const navigate = useNavigate()
     const handleLogin = (event) => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password);
+
+        Login(email, password)
+            .then((result) => {
+                const user = result.user;
+                console.log(user);
+                form.reset();
+                navigate('/');
+                toast.success('successully logged in')
+
+            })
+            .catch((error) => {
+                console.log(error);
+                toast.error(error.message)
+            })
+
 
     }
 
@@ -38,7 +60,7 @@ const LogIn = () => {
                     >
 
                     </Image></span>
-                    <div className="text">Please LogIn</div>
+                    <div className="text">Please LogIn  </div>
                     <Form onSubmit={handleLogin} >
                         {/* <!--Email & password input place--> */}
                         <div className="field">
