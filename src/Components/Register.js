@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import '../style/LogIn.css';
 import logo from '../Assets/Images/Logo.png'
-import { FaLock, FaPhotoVideo, FaRegUser } from "react-icons/fa";
+import { FaGithub, FaGoogle, FaLock, FaPhotoVideo, FaRegUser } from "react-icons/fa";
 import { AiFillMail } from "react-icons/ai";
 import Image from 'react-bootstrap/Image'
 import registrationImage from '../Assets/Images/register3.png';
@@ -86,10 +86,10 @@ const Register = () => {
                         >
 
                         </Image></span>
-                        <div className="text">Please Register</div>
+                        <div className="text mb-1">Please Register</div>
                         <Form onSubmit={handleRegister}>
                             {/* <!--Email & password input place--> */}
-                            <div className="field mb-3">
+                            <div className="field">
                                 <span className='ps-3'><FaRegUser></FaRegUser></span>
                                 <input type="text" name='name' placeholder='Name' required />
 
@@ -104,19 +104,29 @@ const Register = () => {
                                 <input type="email" name='email' placeholder='Email Id' required />
 
                             </div>
-                            <div className="field mb-3">
+                            <div className="field mb-2">
                                 <span className='ps-3'><FaLock></FaLock></span>
                                 <input type="password" name="password" id="" placeholder='Password' />
                             </div>
-                            <Form.Group className="mb-3 ms-2" controlId="formBasicCheckbox">
+                            <Form.Group className="mb-2 ms-2" controlId="formBasicCheckbox">
                                 <Form.Check onClick={handleCheck} type="checkbox" label={<>(Must) Accept <Link to='/terms' className='noDecoration'> terms & conditions</Link> </>} />
                             </Form.Group>
-                            <span className='ms-2 '>Already have an account? <Link to='/login' className='noDecoration'>LogIn</Link></span>
+                            <span className='ms-2 mt-2'>Already have an account? <Link to='/login' className='noDecoration'>LogIn</Link></span>
 
                             <button className='button mt-1' disabled={!checked}>Register</button>
 
                             {/* <!--login & outer button--> */}
                         </Form>
+
+                        <div className="icon-button">
+
+                            <span className='me-2'><FaGithub></FaGithub> GitHub</span>
+
+                            <span className='ms-2'><FaGoogle></FaGoogle> Google</span>
+
+
+                        </div>
+
                     </div>
                 </div>
             </div>

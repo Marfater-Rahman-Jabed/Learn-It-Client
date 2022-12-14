@@ -19,15 +19,17 @@ body {
 }
 
 .img {
-    height: 400px;
+    height: 396px;
     width: 500px;
-    border-radius: 15px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 .img2 {
-    height: 560px;
+    height: 561px;
     width: 500px;
-    border-radius: 15px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 .bgcolor {
@@ -55,7 +57,8 @@ body {
 
     width: 330px;
     background: #dde1e7;
-    border-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
     padding: 40px 30px;
     box-shadow: -3px -3px 7px #ffffff73,
         2px 2px 5px rgba(94, 104, 121, 0.288);
@@ -150,6 +153,40 @@ body {
 
 button:hover {
     background-color: #3498db;
+    box-shadow: inset 2px 2px 5px #babecc,
+        inset -5px -5px 10px #ffffff73;
+}
+
+.content .or {
+    color: black;
+    margin-top: 9px;
+}
+
+.icon-button {
+    margin-top: 15px;
+}
+
+.icon-button span {
+    padding-left: 17px;
+    padding-right: 17px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+
+    border-radius: 5px;
+    line-height: 30px;
+
+    background: #dde1e7;
+    box-shadow: 2px 2px 5px #babecc,
+        -5px -5px 10px #ffffff73;
+}
+
+.icon-button span.facebook {
+    margin-right: 17px;
+
+}
+
+.icon-button span:hover {
+    color: #3498db;
     box-shadow: inset 2px 2px 5px #babecc,
         inset -5px -5px 10px #ffffff73;
 }
