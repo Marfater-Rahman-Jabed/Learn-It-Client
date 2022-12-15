@@ -19,14 +19,18 @@ body {
 }
 
 .img {
-    height: 396px;
+    height: 443px;
     width: 500px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
 
+.border {
+    border: 0px;
+}
+
 .img2 {
-    height: 561px;
+    height: 563px;
     width: 500px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;

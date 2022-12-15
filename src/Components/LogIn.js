@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import '../style/LogIn.css';
 import logo from '../Assets/Images/Logo.png'
-import { FaLock } from "react-icons/fa";
+import { FaGithub, FaGoogle, FaLock } from "react-icons/fa";
 import Image from 'react-bootstrap/Image'
 import logInLogo from '../Assets/Images/loginPageImage.webp';
 import { AiFillMail } from "react-icons/ai";
@@ -9,12 +9,13 @@ import Form from 'react-bootstrap/Form';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Contexts/ContextApi';
 import { toast } from 'react-hot-toast';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
 
 
 
 const LogIn = () => {
-    const { Login } = useContext(AuthContext);
+    const { Login, googleSignIn, gitHubSignIn } = useContext(AuthContext);
     const navigate = useNavigate()
     const handleLogin = (event) => {
         event.preventDefault();
@@ -39,6 +40,38 @@ const LogIn = () => {
 
 
     }
+    const handleGoogle = () => {
+        const provider = new GoogleAuthProvider();
+        googleSignIn(provider)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+                navigate('/');
+                toast.success('Successfully login');
+
+            })
+            .catch(error => {
+                console.log(error);
+                toast.error(error.message)
+            })
+
+    }
+    const handleGithub = () => {
+        const provider = new GithubAuthProvider();
+        gitHubSignIn(provider)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+                navigate('/');
+                toast.success('Successfully Logged in');
+            })
+            .catch(error => {
+                console.log(error);
+                toast.error(error.message)
+            })
+
+    }
+
 
 
     return (
@@ -78,6 +111,16 @@ const LogIn = () => {
 
                             {/* <!--login & outer button--> */}
                         </Form>
+                        <div className="icon-button">
+
+                            <button className='border' onClick={handleGithub} > <span className='me-2'><FaGithub></FaGithub> GitHub</span></button>
+                            <button className='border' onClick={handleGoogle}><span className='ms-2' >
+                                <FaGoogle></FaGoogle> Google
+
+                            </span></button>
+
+
+                        </div>
                     </div>
                 </div>
             </div>

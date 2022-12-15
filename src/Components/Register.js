@@ -9,11 +9,15 @@ import Form from 'react-bootstrap/Form';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Contexts/ContextApi';
 import { toast } from 'react-hot-toast';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
+
+
 
 
 const Register = () => {
-    const { Registered, updateUserProfile } = useContext(AuthContext);
+    const { Registered, updateUserProfile, googleSignIn, gitHubSignIn } = useContext(AuthContext);
     const navigate = useNavigate();
+
     const [user, setUser] = useState();
     const [checked, setChecked] = useState(false);
 
@@ -62,6 +66,38 @@ const Register = () => {
 
     const handleCheck = (event) => {
         setChecked(event.target.checked);
+
+    }
+
+    const handleGoogle = () => {
+        const provider = new GoogleAuthProvider();
+        googleSignIn(provider)
+            .then(result => {
+                const user = result.user;
+                setUser(user);
+                navigate('/');
+                toast.success('Successfully register');
+
+            })
+            .catch(error => {
+                console.log(error);
+                toast.error(error.message)
+            })
+
+    }
+    const handleGithub = () => {
+        const provider = new GithubAuthProvider();
+        gitHubSignIn(provider)
+            .then(result => {
+                const user = result.user;
+                setUser(user);
+                navigate('/');
+                toast.success('Successfully register');
+            })
+            .catch(error => {
+                console.log(error);
+                toast.error(error.message)
+            })
 
     }
 
@@ -120,9 +156,11 @@ const Register = () => {
 
                         <div className="icon-button">
 
-                            <span className='me-2'><FaGithub></FaGithub> GitHub</span>
+                            <button className='border' onClick={handleGithub}> <span className='me-2'><FaGithub></FaGithub> GitHub</span></button>
+                            <button className='border'><span className='ms-2' onClick={handleGoogle}>
+                                <FaGoogle></FaGoogle> Google
 
-                            <span className='ms-2'><FaGoogle></FaGoogle> Google</span>
+                            </span></button>
 
 
                         </div>
