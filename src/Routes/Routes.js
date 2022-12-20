@@ -1,7 +1,9 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Blog from "../Components/Blog";
+import Congress from "../Components/Congress";
 import CourseDetails from "../Components/CourseDetails";
 import Faq from "../Components/Faq";
+import GetPremium from "../Components/GetPremium";
 import Home from "../Components/Home";
 import LogIn from "../Components/LogIn";
 import NewsDetails from "../Components/NewsDetails";
@@ -46,6 +48,15 @@ const router = createBrowserRouter([
                 path: '/news/:id',
                 element: <NewsDetails></NewsDetails>,
                 loader: ({ params }) => fetch(`http://localhost:5000/news/${params.id}`)
+            },
+            {
+                path: '/news/premium/:id',
+                element: <GetPremium></GetPremium>,
+                loader: ({ params }) => fetch(`http://localhost:5000/news/${params.id}`)
+            },
+            {
+                path: '/news/premium',
+                element: <Congress></Congress>
             }
 
 

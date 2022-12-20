@@ -5,9 +5,9 @@ import Card from 'react-bootstrap/Card';
 
 
 
-const NewsDetails = () => {
+
+const GetPremium = () => {
     const news = useLoaderData();
-    console.log(news)
     return (
         <div className='bg-success mb-5'>
             <div className='d-flex justify-content-center pt-3 '>
@@ -17,11 +17,11 @@ const NewsDetails = () => {
                     <Card.Body>
                         <Card.Title ><span className='fs-1 text-danger'>{news.title}</span></Card.Title>
                         <Card.Text>
-                            {news.details.slice(0, 600)}
+                            {news.details}
                         </Card.Text>
                         <div className='d-flex justify-content-between'>
                             <Link to='/news'><Button variant="primary">Go to Category</Button></Link>
-                            <Link to={`/news/premium/${news._id}`}><Button variant="primary">Get Premium Access</Button></Link>
+                            <Link to={`/news/premium`}><Button variant="primary">Complete</Button></Link>
                         </div>
 
                     </Card.Body>
@@ -32,4 +32,4 @@ const NewsDetails = () => {
     );
 };
 
-export default NewsDetails;
+export default GetPremium;
