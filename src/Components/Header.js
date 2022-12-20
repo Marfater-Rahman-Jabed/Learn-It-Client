@@ -41,20 +41,23 @@ const Header = () => {
                             <Nav.Link href="#features" className='me-3 text-color'><Link to='/blog' className='noDecoration text-color'> Blog</Link></Nav.Link>
                             <Nav.Link href="#pricing" className='me-3 text-color'><Link to='/faq' className='noDecoration text-color'>FAQ</Link></Nav.Link>
                             <span className='text-color'><NavDropdown title="Courses" id="collasible-nav-dropdown" className='me-3 text-color'>
-                                <NavDropdown.Item href="#action/3.1">Data Science</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.2">
-                                    Artificial Intelligence and Machine Learning
+                                <NavDropdown.Item ><Link to='/news/01' className='noDecoration'>Artificial Intelligence</Link></NavDropdown.Item>
+                                <NavDropdown.Item>
+                                    <Link to='/news/02' className='noDecoration'> Data Science</Link>
                                 </NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3">Cloud Computing</NavDropdown.Item>
-                                <NavDropdown.Item />
-                                <NavDropdown.Item href="#action/3.4">
-                                    Networking
+                                <NavDropdown.Item >
+                                    <Link to='/news/03' className='noDecoration'> Cloud Computing</Link>
                                 </NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.5">
-                                    Software Development.
+
+                                <NavDropdown.Item >
+                                    <Link to='/news/04' className='noDecoration'> Networking</Link>
                                 </NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.5">
-                                    Big Data
+                                <NavDropdown.Item >
+                                    <Link to='/news/05' className='noDecoration'> Softwear Developing</Link>
+                                </NavDropdown.Item>
+                                <NavDropdown.Item >
+                                    <Link to='/news/06' className='noDecoration'> Big Data</Link>
+
                                 </NavDropdown.Item>
                             </NavDropdown></span>
                             <Nav.Link href="#pricing" className='me-3 text-color'>Toggle</Nav.Link>

@@ -17,7 +17,7 @@ const Home = () => {
                 </p></div> <br />
             <p className='text-light  ps-5'>Have Any Interest??</p>
             <span className='pt-5 ps-5 '>
-                <button className='btn btn-info mb-5'><Link to='/blog' className='no-decoretion text-color'>Click Here To See Cousre Details</Link></button>
+                <button className='btn btn-info mb-5'><Link to='/news' className='no-decoretion text-color'>Click Here To See Cousre Details</Link></button>
 
             </span>
 
