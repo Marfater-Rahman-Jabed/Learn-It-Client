@@ -6,7 +6,7 @@ import Image from 'react-bootstrap/Image'
 import logInLogo from '../Assets/Images/loginPageImage.webp';
 import { AiFillMail } from "react-icons/ai";
 import Form from 'react-bootstrap/Form';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Contexts/ContextApi';
 import { toast } from 'react-hot-toast';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
@@ -17,6 +17,8 @@ import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 const LogIn = () => {
     const { Login, googleSignIn, gitHubSignIn } = useContext(AuthContext);
     const navigate = useNavigate()
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
     const handleLogin = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -29,7 +31,7 @@ const LogIn = () => {
                 const user = result.user;
                 console.log(user);
                 form.reset();
-                navigate('/');
+                navigate(from, { replace: true });
                 toast.success('successully logged in')
 
             })

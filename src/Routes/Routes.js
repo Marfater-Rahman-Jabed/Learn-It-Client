@@ -7,6 +7,7 @@ import GetPremium from "../Components/GetPremium";
 import Home from "../Components/Home";
 import LogIn from "../Components/LogIn";
 import NewsDetails from "../Components/NewsDetails";
+import PrivateRoute from "../Components/PrivateRoute";
 import Register from "../Components/Register";
 import TermsAndConditions from "../Components/TermsAndConditions";
 import Main from "../Layout/Main";
@@ -51,7 +52,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/news/premium/:id',
-                element: <GetPremium></GetPremium>,
+                element: <PrivateRoute><GetPremium></GetPremium></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/news/${params.id}`)
             },
             {
