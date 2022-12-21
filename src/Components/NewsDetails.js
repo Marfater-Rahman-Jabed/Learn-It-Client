@@ -17,7 +17,7 @@ const NewsDetails = () => {
                     <Card.Body>
                         <Card.Title ><span className='fs-1 text-danger'>{news.title}</span></Card.Title>
                         <Card.Text>
-                            {news.details.slice(0, 600)}
+                            {news.details.slice(0, 600) + ' ...'}
                         </Card.Text>
                         <div className='d-flex justify-content-between'>
                             <Link to='/news'><Button variant="primary">Go to Category</Button></Link>

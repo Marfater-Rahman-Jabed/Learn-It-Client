@@ -22,7 +22,7 @@ const CourseDetails = () => {
     }, [])
     return (
         <div>
-            <h1 className='pt-4  text-center text-light bg-secondary pb-3'><i>Course Details of 4th Industrial Revolation</i></h1>
+            <h1 className='pt-4  text-center text-light bg-secondary pb-3'><i>Course Details of 4th Industrial Revolution </i></h1>
             <Container className='mt-0'>
 
                 <Row>
