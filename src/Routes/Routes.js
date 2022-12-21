@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Blog from "../Components/Blog";
 import Congress from "../Components/Congress";
 import CourseDetails from "../Components/CourseDetails";
+import ErrorPage from "../Components/ErrorPage";
 import Faq from "../Components/Faq";
 import GetPremium from "../Components/GetPremium";
 import Home from "../Components/Home";
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
             {
                 path: '/news/premium',
                 element: <Congress></Congress>
+            },
+            {
+                path: '*',
+                element: <ErrorPage></ErrorPage>
             }
 
 

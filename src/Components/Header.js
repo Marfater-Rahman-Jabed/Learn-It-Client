@@ -41,22 +41,22 @@ const Header = () => {
                             <Nav.Link href="#features" className='me-3 text-color'><Link to='/blog' className='noDecoration text-color'> Blog</Link></Nav.Link>
                             <Nav.Link href="#pricing" className='me-3 text-color'><Link to='/faq' className='noDecoration text-color'>FAQ</Link></Nav.Link>
                             <span className='text-color'><NavDropdown title="Courses" id="collasible-nav-dropdown" className='me-3 text-color'>
-                                <NavDropdown.Item ><Link to='/news/01' className='noDecoration'>Artificial Intelligence</Link></NavDropdown.Item>
+                                <NavDropdown.Item ><Link to='/news/0282e0e58a5c404fbd15261f11c2ab6a' className='noDecoration'>Artificial Intelligence</Link></NavDropdown.Item>
                                 <NavDropdown.Item>
-                                    <Link to='/news/02' className='noDecoration'> Data Science</Link>
+                                    <Link to='/news/0282e0e58a5c404fbd15261f11c2ab6b' className='noDecoration'> Data Science</Link>
                                 </NavDropdown.Item>
                                 <NavDropdown.Item >
-                                    <Link to='/news/03' className='noDecoration'> Cloud Computing</Link>
+                                    <Link to='/news/0282e0e58a5c404fbd15261f11c2ab6c' className='noDecoration'> Cloud Computing</Link>
                                 </NavDropdown.Item>
 
                                 <NavDropdown.Item >
-                                    <Link to='/news/04' className='noDecoration'> Networking</Link>
+                                    <Link to='/news/0282e0e58a5c404fbd15261f11c2ab6d' className='noDecoration'> Networking</Link>
                                 </NavDropdown.Item>
                                 <NavDropdown.Item >
-                                    <Link to='/news/05' className='noDecoration'> Softwear Developing</Link>
+                                    <Link to='/news/0282e0e58a5c404fbd15261f11c2ab6e' className='noDecoration'> Softwear Developing</Link>
                                 </NavDropdown.Item>
                                 <NavDropdown.Item >
-                                    <Link to='/news/06' className='noDecoration'> Big Data</Link>
+                                    <Link to='/news/0282e0e58a5c404fbd15261f11c2ab6f' className='noDecoration'> Big Data</Link>
 
                                 </NavDropdown.Item>
                             </NavDropdown></span>
