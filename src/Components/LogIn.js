@@ -82,9 +82,10 @@ const LogIn = () => {
             <div className='jabed'>
 
                 <div>
-                    <Image className='img'
+                    {/* <Image className='img'
                         src={logInLogo}
-                    ></Image>
+                    ></Image> */}
+                    <img src={logInLogo} className="w-[500px] h-[445px]" alt="" />
                 </div>
                 <div className="content">
 
@@ -100,12 +101,12 @@ const LogIn = () => {
                         <Form onSubmit={handleLogin} >
                             {/* <!--Email & password input place--> */}
                             <div className="field">
-                                <span className='ps-3'><AiFillMail></AiFillMail></span>
+                                <span className='ps-3 mt-3'><AiFillMail></AiFillMail></span>
                                 <input type="email" name='email' placeholder='Email Id' required />
 
                             </div>
                             <div className="field">
-                                <span className='ps-3'><FaLock></FaLock></span>
+                                <span className='ps-3 mt-3'><FaLock></FaLock></span>
                                 <input type="password" name="password" id="" placeholder='Password' />
                             </div>
                             <span >New In This website? <Link to='/register' className='noDecoration'>Register</Link> </span>
@@ -115,8 +116,8 @@ const LogIn = () => {
                         </Form>
                         <div className="icon-button">
 
-                            <button className='border' onClick={handleGithub} > <span className='me-2'><FaGithub></FaGithub> GitHub</span></button>
-                            <button className='border' onClick={handleGoogle}><span className='ms-2' >
+                            <button className='border' onClick={handleGithub} > <span className='me-2 flex items-center gap-2'><FaGithub></FaGithub> GitHub</span></button>
+                            <button className='border' onClick={handleGoogle}><span className='ms-2 flex items-center gap-2' >
                                 <FaGoogle></FaGoogle> Google
 
                             </span></button>

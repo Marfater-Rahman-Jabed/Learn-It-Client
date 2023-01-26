@@ -38,17 +38,18 @@ const Header = () => {
 
     }
     return (
-        <div>
+        <div className=''>
             {/* <h1>this is header section</h1> */}
-            <Navbar collapseOnSelect expand="lg" bg={theme === 'dark-theme' ? "dark" : "dark"} variant="dark" >
+            <Navbar collapseOnSelect expand="lg" bg={theme === 'dark-theme' ? "dark" : "dark"} variant="dark" className='py-3'>
                 <Container>
-                    <div>
-                        <Image src={logo}
+                    <div className='flex gap-3 items-center'>
+                        {/* <Image src={logo}
                             roundedCircle
                             height={'50px'}
                             className='me-2'
-                        ></Image>
-                        <Navbar.Brand href="#home" ><Link to='/' className='text-warning noDecoration mt-1'>Learn IT World</Link></Navbar.Brand>
+                        ></Image> */}
+                        <img src={logo} className="w-16 rounded-full" alt="" />
+                        <Navbar.Brand href="#home" ><Link to='/' className='text-warning noDecoration mt-1 '>Learn IT World</Link></Navbar.Brand>
                     </div>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
@@ -75,7 +76,9 @@ const Header = () => {
 
                                 </NavDropdown.Item>
                             </NavDropdown></span>
-                            <Nav.Link onClick={toggled} className='me-3 mt-1 text-color'>{theme === 'light-theme' ? <h6 className=' text-color'><MdDarkMode></MdDarkMode> dark</h6> : <h6 className=' text-color'><MdLightMode></MdLightMode> light </h6>}</Nav.Link>
+                            <Nav.Link onClick={toggled} className='me-3 mt-1 text-color '>
+                                {theme === 'light-theme' ? <h6 className=' text-color flex gap-1 items-center'><MdDarkMode></MdDarkMode> dark</h6> : <h6 className=' text-color flex gap-1 items-center'><MdLightMode></MdLightMode> light </h6>}
+                            </Nav.Link>
                         </Nav>
                         <Nav>
                             {user?.displayName ? <span className='text-color mt-2 me-2'>{user.displayName}</span> : <span></span>}

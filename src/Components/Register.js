@@ -108,9 +108,10 @@ const Register = () => {
             <div className='jabed'>
 
                 <div>
-                    <Image className='img2'
+                    {/* <Image className='img2'
                         src={registrationImage}
-                    ></Image>
+                    ></Image> */}
+                    <img src={registrationImage} className="h-[563px] w-[500px]" alt="" />
                 </div>
                 <div className="content">
 
@@ -126,22 +127,22 @@ const Register = () => {
                         <Form onSubmit={handleRegister}>
                             {/* <!--Email & password input place--> */}
                             <div className="field">
-                                <span className='ps-3'><FaRegUser></FaRegUser></span>
+                                <span className='ps-3 mt-3'><FaRegUser></FaRegUser></span>
                                 <input type="text" name='name' placeholder='Name' required />
 
                             </div>
                             <div className="field mb-3">
-                                <span className='ps-3'><FaPhotoVideo></FaPhotoVideo></span>
+                                <span className='ps-3 mt-3'><FaPhotoVideo></FaPhotoVideo></span>
                                 <input type="text" name='photoURL' placeholder='Photo URL' required />
 
                             </div>
                             <div className="field mb-3">
-                                <span className='ps-3'><AiFillMail></AiFillMail></span>
+                                <span className='ps-3 mt-3'><AiFillMail></AiFillMail></span>
                                 <input type="email" name='email' placeholder='Email Id' required />
 
                             </div>
                             <div className="field mb-2">
-                                <span className='ps-3'><FaLock></FaLock></span>
+                                <span className='ps-3 mt-3'><FaLock></FaLock></span>
                                 <input type="password" name="password" id="" placeholder='Password' />
                             </div>
                             <Form.Group className="mb-2 ms-2" controlId="formBasicCheckbox">
@@ -156,8 +157,8 @@ const Register = () => {
 
                         <div className="icon-button">
 
-                            <button className='border' onClick={handleGithub}> <span className='me-2'><FaGithub></FaGithub> GitHub</span></button>
-                            <button className='border'><span className='ms-2' onClick={handleGoogle}>
+                            <button className='border' onClick={handleGithub}> <span className='me-2 flex items-center gap-2'><FaGithub></FaGithub> GitHub</span></button>
+                            <button className='border'><span className='ms-2 flex items-center gap-2' onClick={handleGoogle}>
                                 <FaGoogle></FaGoogle> Google
 
                             </span></button>
