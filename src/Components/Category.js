@@ -16,7 +16,7 @@ const Category = ({ c }) => {
                     <Card.Text className='h-32'>
                         {c.details.length > 250 ?
                             <p>
-                                {c.details.slice(0, 250) + '...'} <Link to={`${c.category_id}`}>see more</Link>
+                                {c.details.slice(0, 250) + '...'} <Link to={`/news/${c.category_id}`}>see more</Link>
                             </p>
                             :
                             <p>

@@ -12,11 +12,11 @@ const Congress = () => {
         <div >
             <div >
                 < Confetti
-                    style={{ height: "100vh", width: "200vh" }}
+                    style={{ height: "100vh", width: "98vw" }}
 
                 />
-                <div className='d-flex justify-content-center align-items-center pt-5'>
-                    <Card style={{ width: '28rem', height: '14rem', border: '15px solid purple', borderRadius: '10px' }} className='bg-danger'>
+                <div className='d-flex justify-content-center align-items-center pt-5 mb-36'>
+                    <Card style={{ width: '28rem', border: '15px solid purple', borderRadius: '10px' }} className='bg-danger'>
 
                         <Card.Body>
                             <Card.Title className='text-light'>Well Done !!!</Card.Title>

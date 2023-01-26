@@ -9,10 +9,10 @@ import Card from 'react-bootstrap/Card';
 const GetPremium = () => {
     const news = useLoaderData();
     return (
-        <div className='bg-success mb-5'>
-            <div className='d-flex justify-content-center pt-3 '>
+        <div className='bg-success pb-5'>
+            <div className='d-flex justify-content-center pt-1 '>
 
-                <Card style={{ height: '14rem', width: '48rem' }} variant="top" >
+                <Card style={{ width: '48rem' }} variant="top" className='my-16'>
                     <Card.Img variant="top" src={news.image_url} />
                     <Card.Body style={{ border: '5px solid tomato', borderTop: '0px' }}>
                         <Card.Title ><span className='fs-1 text-danger'>{news.title}</span></Card.Title>
