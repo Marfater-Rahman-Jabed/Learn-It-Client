@@ -14,7 +14,7 @@ const GetPremium = () => {
 
                 <Card style={{ height: '14rem', width: '48rem' }} variant="top" >
                     <Card.Img variant="top" src={news.image_url} />
-                    <Card.Body>
+                    <Card.Body style={{ border: '5px solid tomato', borderTop: '0px' }}>
                         <Card.Title ><span className='fs-1 text-danger'>{news.title}</span></Card.Title>
                         <Card.Text>
                             {news.details}

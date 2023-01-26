@@ -21,7 +21,7 @@ const NewsDetails = () => {
                         </Card.Text>
                         <div className='d-flex justify-content-between'>
                             <Link to='/news'><Button variant="primary">Go to Category</Button></Link>
-                            <Link to={`/news/premium/${news._id}`}><Button variant="primary">Get Premium Access</Button></Link>
+                            <Link to={`/news/premium/${news.category_id}`}><Button variant="primary">Get Premium Access</Button></Link>
                         </div>
 
                     </Card.Body>

@@ -11,18 +11,18 @@ import { AuthContext } from '../Contexts/ContextApi';
 import { MdDarkMode, MdLightMode } from "react-icons/md";
 
 const Header = () => {
-    const { LogOut, user } = useContext(AuthContext);
-    const [theme, setTheme] = useState('light-theme')
-    const toggle = () => {
-        // alert('hi')
-        if (theme === 'light-theme') {
-            setTheme('dark-theme')
-        }
-        else {
-            setTheme('light-theme')
-        }
+    const { LogOut, user, toggled, theme } = useContext(AuthContext);
+    // const [theme, setTheme] = useState('light-theme')
+    // const toggle = () => {
+    //     // alert('hi')
+    //     if (theme === 'light-theme') {
+    //         setTheme('dark-theme')
+    //     }
+    //     else {
+    //         setTheme('light-theme')
+    //     }
 
-    }
+    // }
     useEffect(() => {
         document.body.className = theme
     }, [theme])
@@ -40,7 +40,7 @@ const Header = () => {
     return (
         <div>
             {/* <h1>this is header section</h1> */}
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" >
+            <Navbar collapseOnSelect expand="lg" bg={theme === 'dark-theme' ? "dark" : "dark"} variant="dark" >
                 <Container>
                     <div>
                         <Image src={logo}
@@ -56,26 +56,26 @@ const Header = () => {
                             <Nav.Link className='me-3 mt-1 text-color'><Link to='/blog' className='noDecoration text-color'> Blog</Link></Nav.Link>
                             <Nav.Link className='me-3 mt-1 text-color'><Link to='/faq' className='noDecoration text-color '>FAQ</Link></Nav.Link>
                             <span className='text-color'><NavDropdown title="Courses" id="collasible-nav-dropdown" className='me-3 mt-1 text-color'>
-                                <NavDropdown.Item ><Link to='/news/0282e0e58a5c404fbd15261f11c2ab6a' className='noDecoration'>Artificial Intelligence</Link></NavDropdown.Item>
+                                <NavDropdown.Item ><Link to='/news/01' className='noDecoration'>Artificial Intelligence</Link></NavDropdown.Item>
                                 <NavDropdown.Item>
-                                    <Link to='/news/0282e0e58a5c404fbd15261f11c2ab6b' className='noDecoration'> Data Science</Link>
+                                    <Link to='/news/02' className='noDecoration'> Data Science</Link>
                                 </NavDropdown.Item>
                                 <NavDropdown.Item >
-                                    <Link to='/news/0282e0e58a5c404fbd15261f11c2ab6c' className='noDecoration'> Cloud Computing</Link>
+                                    <Link to='/news/03' className='noDecoration'> Cloud Computing</Link>
                                 </NavDropdown.Item>
 
                                 <NavDropdown.Item >
-                                    <Link to='/news/0282e0e58a5c404fbd15261f11c2ab6d' className='noDecoration'> Networking</Link>
+                                    <Link to='/news/04' className='noDecoration'> Networking</Link>
                                 </NavDropdown.Item>
                                 <NavDropdown.Item >
-                                    <Link to='/news/0282e0e58a5c404fbd15261f11c2ab6e' className='noDecoration'> Softwear Developing</Link>
+                                    <Link to='/news/05' className='noDecoration'> Softwear Developing</Link>
                                 </NavDropdown.Item>
                                 <NavDropdown.Item >
-                                    <Link to='/news/0282e0e58a5c404fbd15261f11c2ab6f' className='noDecoration'> Big Data</Link>
+                                    <Link to='/news/06' className='noDecoration'> Big Data</Link>
 
                                 </NavDropdown.Item>
                             </NavDropdown></span>
-                            <Nav.Link onClick={toggle} className='me-3 mt-1 text-color'>{theme === 'light-theme' ? <h6 className=' text-color'>Dark mood <MdDarkMode></MdDarkMode></h6> : <h6 className=' text-color'>Light mood <MdLightMode></MdLightMode></h6>}</Nav.Link>
+                            <Nav.Link onClick={toggled} className='me-3 mt-1 text-color'>{theme === 'light-theme' ? <h6 className=' text-color'><MdDarkMode></MdDarkMode> dark</h6> : <h6 className=' text-color'><MdLightMode></MdLightMode> light </h6>}</Nav.Link>
                         </Nav>
                         <Nav>
                             {user?.displayName ? <span className='text-color mt-2 me-2'>{user.displayName}</span> : <span></span>}

@@ -10,6 +10,7 @@ const ContextApi = ({ children }) => {
 
     const [user, setUser] = useState();
     const [loading, setLoading] = useState(true);
+    const [theme, setTheme] = useState('light-theme')
 
     const Registered = (email, password) => {
         setLoading(true)
@@ -38,6 +39,16 @@ const ContextApi = ({ children }) => {
         return signInWithPopup(auth, provider)
     }
 
+    const toggled = () => {
+        // alert('hi')
+        if (theme === 'light-theme') {
+            setTheme('dark-theme')
+        }
+        else {
+            setTheme('light-theme')
+        }
+
+    }
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
@@ -52,7 +63,7 @@ const ContextApi = ({ children }) => {
 
 
 
-    const AuthInfo = { user, loading, Registered, Login, LogOut, updateUserProfile, googleSignIn, gitHubSignIn }
+    const AuthInfo = { user, loading, Registered, toggled, theme, Login, LogOut, updateUserProfile, googleSignIn, gitHubSignIn }
     return (
         <AuthContext.Provider value={AuthInfo}>
             {children}

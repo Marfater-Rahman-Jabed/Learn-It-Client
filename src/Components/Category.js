@@ -12,11 +12,11 @@ const Category = ({ c }) => {
             <Card >
                 <Card.Img style={{ height: '14rem' }} variant="top" src={c.image_url} />
                 <Card.Body>
-                    <Card.Title>{c.title}</Card.Title>
+                    <Card.Title className='text-info'>{c.title}</Card.Title>
                     <Card.Text>
                         {c.details.length > 250 ?
                             <p>
-                                {c.details.slice(0, 250) + '...'} <Link to={`${c._id}`}>see more</Link>
+                                {c.details.slice(0, 250) + '...'} <Link to={`${c.category_id}`}>see more</Link>
                             </p>
                             :
                             <p>

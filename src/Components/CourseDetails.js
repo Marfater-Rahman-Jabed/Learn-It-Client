@@ -32,7 +32,7 @@ const CourseDetails = () => {
                             <h2 className='text-danger mb-2'><i>Categories List</i></h2>
                             {
                                 lisst.map(li => <p>
-                                    <Link to={li.id}>{li.name}</Link>
+                                    <Link to={li.category_id}>{li.name}</Link>
                                 </p>)
                             }
                         </StickyBox>
