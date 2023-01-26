@@ -105,13 +105,13 @@ const Register = () => {
     return (
         <div className='bgcolor'>
             {/* <h1>This is registration page</h1> */}
-            <div className='jabed'>
+            <div className='flex flex-row items-center justify-center py-16'>
 
                 <div>
                     {/* <Image className='img2'
                         src={registrationImage}
                     ></Image> */}
-                    <img src={registrationImage} className="h-[563px] w-[500px]" alt="" />
+                    <img src={registrationImage} className="lg:h-[563px] lg:w-[500px]  lg:block hidden" alt="" />
                 </div>
                 <div className="content">
 

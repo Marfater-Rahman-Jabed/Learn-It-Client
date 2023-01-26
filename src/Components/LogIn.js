@@ -79,13 +79,13 @@ const LogIn = () => {
     return (
 
         <div className='bgcolor'>
-            <div className='jabed'>
+            <div className=' flex flex-row items-center justify-center py-16 '>
 
-                <div>
+                <div >
                     {/* <Image className='img'
                         src={logInLogo}
                     ></Image> */}
-                    <img src={logInLogo} className="w-[500px] h-[445px]" alt="" />
+                    <img src={logInLogo} className="lg:w-[500px] lg:h-[445px] w-full h-full lg:block hidden" alt="" />
                 </div>
                 <div className="content">
 

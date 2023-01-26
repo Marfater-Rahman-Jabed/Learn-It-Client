@@ -42,7 +42,7 @@ body {
 }
 
 .jabed {
-    display: flex;
+    /* display: flex; */
     place-items: center;
     padding-top: 70px;
     justify-content: center;
