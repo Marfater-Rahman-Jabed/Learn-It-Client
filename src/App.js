@@ -4,7 +4,7 @@ import Routes from './Routes/Routes';
 
 function App() {
   return (
-    <div className="">
+    <div className="w-11/12 mx-auto">
       <Routes></Routes>
       <Toaster />
     </div>

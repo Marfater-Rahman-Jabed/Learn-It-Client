@@ -32,6 +32,10 @@ const Home = () => {
 
 
             </div>
+            <div className='shadow-2xl  my-6'>
+                <p className='text-center text-primary font-bold text-3xl'>Our Courses</p>
+                <p className='text-center font-semibold text-xl mb-3 '>This is our courses which is help you to know details</p>
+            </div>
             <div className='grid gap-3 my-3 px-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                 {
                     categories.map(c => <Category

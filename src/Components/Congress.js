@@ -12,7 +12,8 @@ const Congress = () => {
         <div >
             <div >
                 < Confetti
-                    style={{ height: "100vh", width: "98vw" }}
+                    style={{ height: "100vh", width: "90vw" }}
+                    className="mx-auto"
 
                 />
                 <div className='d-flex justify-content-center align-items-center pt-5 mb-36'>
